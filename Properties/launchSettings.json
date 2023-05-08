@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "TPBase": {
+    "TP_04_Paquetes_Turísticos_Droblas_Suken.Controllers": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

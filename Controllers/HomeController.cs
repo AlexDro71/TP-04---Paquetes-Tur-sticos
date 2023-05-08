@@ -1,11 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace TPBase.Controllers;
+namespace TP_04_Paquetes_Turísticos_Droblas_Suken.Controllers;
 
-public class HomeController : Controller
+public class EstudianteController : Controller
 {
     public IActionResult Index()
     {
+        
+        return View();
+    }
+    public IActionResult SelectPaquete()
+    {
+        
+        return View();
+    }
+    public IActionResult GuardarPaquete(int Destino, int Hotel, int Aereo, int Excursion)
+    {
+        
         return View();
     }
 }
