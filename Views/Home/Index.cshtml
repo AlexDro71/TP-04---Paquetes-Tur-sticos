@@ -1,5 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Index";
+ 
 }
+   <h1>VIAJES COMPLETOS</h1>
+    <h2>Compre sus paquetes de viaje con hotel, excrusiones y aerolineas incluidas al mejor precio</h2>
+    <p>Ir a <a href='@Url.Action("SelectPaquete")'>Crear Paquete</a></p>
+   
+   <h3>Sus paquetes de viaje:</h3>
 
-<h1>TP XX - Index</h1>
+  
+    @{
+        foreach(string destino in ViewBag.Paquetes.Keys){
+            <h1>@destino</h1>
+            <img @ViewBag.Paquetes[destino].hotel>
+            <img @ViewBag.Paquetes[destino].excrusion>
+            <img @ViewBag.Paquetes[destino].aereo>
+     }
+    }
+    

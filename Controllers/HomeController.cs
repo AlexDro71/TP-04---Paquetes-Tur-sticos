@@ -2,7 +2,7 @@
 
 namespace TP_04_Paquetes_Turísticos_Droblas_Suken.Controllers;
 
-public class EstudianteController : Controller
+public class HomeController : Controller
 {
     public IActionResult Index()
     {

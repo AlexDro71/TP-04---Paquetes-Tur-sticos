@@ -2,4 +2,13 @@
     ViewData["Title"] = "selectPaquete";
 }
 
-<h1>TP XX - Index</h1>
+<h1>CREE SU PAQUETE DE VIAJE</h1>
+<select name="Destinos" id="destino-select">
+    <option value="">Elija un destino:</option>
+    @{
+        foreach (string destino in ViewBag.ListaDestinos)
+        {
+            <option>@destino</option>
+        }
+    }
+</select>
