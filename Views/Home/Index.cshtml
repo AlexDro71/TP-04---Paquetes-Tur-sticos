@@ -3,7 +3,7 @@
  
 }
    <h1>VIAJES COMPLETOS</h1>
-    <h2>Compre sus paquetes de viaje con hotel, excrusiones y aerolineas incluidas al mejor precio</h2>
+    <h2>Compre sus paquetes de viaje con hotel, excursiones y aerolineas incluidas al mejor precio</h2>
     <p>Ir a <a href='@Url.Action("SelectPaquete")'>Crear Paquete</a></p>
    
    <h3>Sus paquetes de viaje:</h3>
@@ -12,9 +12,10 @@
     @{
         foreach(string destino in ViewBag.Paquetes.Keys){
             <h1>@destino</h1>
-            <img @ViewBag.Paquetes[destino].hotel>
-            <img @ViewBag.Paquetes[destino].excrusion>
-            <img @ViewBag.Paquetes[destino].aereo>
+          
+            <img src="~/img/@ViewBag.Paquetes[destino].hotel" width="150" height="auto">
+            <img src="~/img/@ViewBag.Paquetes[destino].aereo" width="150" height="auto">
+            <img src="~/img/@ViewBag.Paquetes[destino].excursion" width="150" height="auto">
      }
     }
     

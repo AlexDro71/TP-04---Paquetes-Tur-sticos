@@ -11,23 +11,32 @@ public class HomeController : Controller
     }
     public IActionResult SelectPaquete()
     {
-        ViewBag.ListaDestinos = ortWorld.ListaDestinos;
-        ViewBag.ListaAereos = ortWorld.ListaAereos;
-        ViewBag.ListaHoteles = ortWorld.ListaHoteles;
-        ViewBag.ListaExcursiones = ortWorld.ListaExcursiones;
+        cargarListas();
         return View();
     }
     public IActionResult GuardarPaquete(int Destino, int Hotel, int Aereo, int Excursion)
     {
         if (Destino > 0 && Hotel > 0 && Aereo > 0 && Excursion > 0)
         {
-            Paquete paq = new Paquete(ortWorld.ListaHoteles[Hotel], ortWorld.ListaAereos[Aereo], ortWorld.ListaExcursiones[Excursion]);
-            ortWorld.ingresarPaquete(ortWorld.ListaDestinos[Destino], paq);
-            return View("index.cshtml");
+
+            Paquete paq = new Paquete(ortWorld.ListaHoteles[Hotel-1], ortWorld.ListaAereos[Aereo-1], ortWorld.ListaExcursiones[Excursion-1]);
+            ortWorld.ingresarPaquete(ortWorld.ListaDestinos[Destino-1], paq);
+            ViewBag.Paquetes = ortWorld.Paquetes;
+            return View("Index");
         }
         else
         {
-            return View("selectPaquete.cshtml");
+           cargarListas();
+            return View("SelectPaquete");
         }
+
+    }
+    public void cargarListas()
+    {
+        ViewBag.ListaDestinos = ortWorld.ListaDestinos;
+        ViewBag.ListaAereos = ortWorld.ListaAereos;
+        ViewBag.ListaHoteles = ortWorld.ListaHoteles;
+        ViewBag.ListaExcursiones = ortWorld.ListaExcursiones;
     }
 }
+

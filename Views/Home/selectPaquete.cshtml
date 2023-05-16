@@ -3,12 +3,64 @@
 }
 
 <h1>CREE SU PAQUETE DE VIAJE</h1>
-<select name="Destinos" id="destino-select">
-    <option value="">Elija un destino:</option>
+<form action='@Url.Action("GuardarPaquete")'>
+<p>
+<select name="Destino">
+    <option value="-1">Elija un destino:</option>
     @{
-        foreach (string destino in ViewBag.ListaDestinos)
+        
+        for (int i=0; i < ViewBag.ListaDestinos.Count; i++)
         {
-            <option>@destino</option>
+            <option value=@(i+1)>@ViewBag.ListaDestinos[i]</option>
         }
     }
 </select>
+<br><br>
+<select name="Hotel">
+    <option value="-1">Elija su hotel:</option>
+    @{
+        for(int i=0; i<10; i++)
+        {
+            <option value=@(i+1)>@("Hotel " + (i+1))</option>
+        }
+    }
+</select>
+<br>
+@foreach (string hotel in ViewBag.ListaHoteles)
+{
+<img src="~/img/@hotel" width="150" height="auto">   
+}
+
+<br>
+<select name="Aereo">
+    <option value="-1">Elija un aereo:</option>
+    @{
+                for(int i=0; i<10; i++)
+        {
+            <option value=@(i+1)>@("Aereo " + (i+1))</option>
+        }
+    }
+</select>
+<br>
+@foreach (string aereo in ViewBag.ListaAereos)
+{
+<img src="~/img/@aereo" width="150" height="auto">   
+}
+<br>
+<select name="Excursion">
+    <option value="-1">Elija una excursion:</option>
+    @{
+        for(int i=0; i<10; i++)
+        {
+            <option value=@(i+1)>@("Excursion " + (i+1))</option>
+        }
+    }
+</select>
+<br>
+@foreach (string excursion in ViewBag.ListaExcursiones)
+{
+<img src="~/img/@excursion" width="150" height="auto">
+}
+</p>
+<p><input type="submit" value="Crear Paquete"></p>
+</form>
