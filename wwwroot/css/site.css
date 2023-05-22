@@ -12,10 +12,80 @@ html {
 
 body {
   margin: 20px 60px 0px 20px;
+  background-color: bisque;
 }
 
 footer {
   position: fixed; 
   bottom: 0; 
   margin: 10px 0px 20px 0px;
+}
+
+h1{
+  text-align: center;
+
+}
+
+section{
+  float: left;
+  border-style: solid;
+  margin: 1%;
+  border-radius: 10%;
+  padding: 1%;
+}
+
+img{
+  height:250px;
+  width: 250px;
+  
+}
+
+p{
+  text-align: center;
+  margin: 1%;
+}
+
+a{
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  margin: 0 auto;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.erase{
+  background-color: red; 
+  color:black;
+}
+.card-footer{
+  margin: 0 auto;
+  text-align: center;
+}
+
+select{
+  background-color: grey; 
+  border: none;
+  color: white;
+  margin: 0 auto;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1%;
+}
+
+input{
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  margin: 0 auto;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

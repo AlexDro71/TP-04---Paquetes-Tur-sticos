@@ -2,20 +2,26 @@
     ViewData["Title"] = "Index";
  
 }
+
    <h1>VIAJES COMPLETOS</h1>
-    <h2>Compre sus paquetes de viaje con hotel, excursiones y aerolineas incluidas al mejor precio</h2>
-    <p>Ir a <a href='@Url.Action("SelectPaquete")'>Crear Paquete</a></p>
+    <h2><a href='@Url.Action("SelectPaquete")'>Crear Paquete</a></h2>
    
-   <h3>Sus paquetes de viaje:</h3>
+   <h1>Sus paquetes de viaje:</h1>
 
   
     @{
         foreach(string destino in ViewBag.Paquetes.Keys){
-            <h1>@destino</h1>
           
+            <section><h1>@destino</h1>
             <img src="~/img/@ViewBag.Paquetes[destino].hotel" width="150" height="auto">
             <img src="~/img/@ViewBag.Paquetes[destino].aereo" width="150" height="auto">
             <img src="~/img/@ViewBag.Paquetes[destino].excursion" width="150" height="auto">
+            <br>
+            <div class="card-footer">
+                <a class="erase" href='@Url.Action("borrarPaquete", new {destinoSeleccionado = destino})'>Borrar paquete</a>
+            </div>
+            </section>
      }
+
     }
-    
+     

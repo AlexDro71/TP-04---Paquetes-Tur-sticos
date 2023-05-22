@@ -38,5 +38,11 @@ public class HomeController : Controller
         ViewBag.ListaHoteles = ortWorld.ListaHoteles;
         ViewBag.ListaExcursiones = ortWorld.ListaExcursiones;
     }
+
+    public IActionResult borrarPaquete(string destinoSeleccionado){
+        ViewBag.Paquetes = ortWorld.Paquetes;
+        ortWorld.eliminarPaquete(destinoSeleccionado);
+        return View("Index");
+    }
 }
 
